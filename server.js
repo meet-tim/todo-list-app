@@ -3,11 +3,13 @@ const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
 const filterOption = document.querySelector(".filter-todo");
 const clearAll = document.querySelector(".x-btn");
+const dark_btn =  document.querySelector(".toggler")
 
 document.addEventListener("DOMContentLoaded", getLocalTodos);
 todoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteCheck);
 clearAll.addEventListener("click", clearTodos);
+dark_btn.addEventListener("click", modeToggler);
 filterOption.addEventListener("change", filterTodo);
 
 function addTodo(event) {
@@ -165,4 +167,14 @@ function clearTodos(){
     
 	
     
+}
+
+function modeToggler(){
+    document.documentElement.classList.toggle("dark-body")
+
+    if (dark_btn.innerHTML == '<i class="fa-solid fa-sun" aria-hidden="true"></i>') {
+        dark_btn.innerHTML = '<i class="fa-solid fa-moon" aria-hidden="true"></i>';
+     } else {
+        dark_btn.innerHTML = '<i class="fa-solid fa-sun" aria-hidden="true"></i>'
+     }
 }
